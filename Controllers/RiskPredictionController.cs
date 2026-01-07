@@ -2,7 +2,7 @@
 using Danciu_Lavinia_Lab5.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-
+////
 namespace Danciu_Lavinia_Lab5.Controllers
 {
     public class RiskPredictionController : Controller
