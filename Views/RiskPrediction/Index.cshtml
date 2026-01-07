@@ -1,0 +1,32 @@
+﻿@model Danciu_Lavinia_Lab5.Models.RiskPredictionViewModel
+
+@{
+    ViewData["Title"] = "Risk Prediction";
+}
+
+
+<h2>Risk Prediction</h2>
+
+<form asp-action="Index" method="post">
+    <div class="mb-3">
+        <label asp-for="InspectionType" class="form-label">Inspection Type</label>
+        <input asp-for="InspectionType" class="form-control" placeholder="Reinspection/Followup" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ViolationDescription" class="form-label">Violation Description</label>
+        <textarea asp-for="ViolationDescription" class="form-control" rows="4"
+                  placeholder="Inadequately cleaned or sanitized food contact surfaces"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Predict</button>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(Model?.PredictedRisk))
+{
+    <hr />
+    <h3>Predicted Risk</h3>
+    <div class="alert alert-success">
+        <strong>@Model.PredictedRisk</strong>
+    </div>
+}
